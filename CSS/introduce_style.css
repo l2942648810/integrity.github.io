@@ -1,0 +1,346 @@
+/* 基础样式设置 */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #50d890;
+    --accent-color: #ffa41b;
+    --text-color: #333;
+    --bg-color: #f0f4f8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 中国风边框背景 */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+    line-height: 1.6;
+    background-color: rgb(255, 237, 197);
+    background-image: url('../img/chinese-border-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+p{
+    text-indent: 2em;
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 头部导航样式 */
+header {
+    background-color: #56557f;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* 标题样式统一 */
+h1, h2, h3 {
+    font-family: "楷体", KaiTi, serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 40px 0;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #888, transparent);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    position: relative;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #888, transparent);
+}
+
+section {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    margin-bottom: 40px;
+    padding: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    pointer-events: none;
+}
+
+/* 节气轮盘相关样式 */
+.solar-terms-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 1000px;
+    margin: 40px auto;
+}
+
+.solar-terms-wheel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.term {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    transform: translate(-50%, -50%);
+}
+
+.term img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.term:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    z-index: 10;
+}
+
+.term-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(246, 241, 233, 0.98);  /* 更改为米色背景 */
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);  /* 增强阴影效果 */
+    border: 1px solid rgba(210, 199, 188, 0.3);   /* 添加淡色边框 */
+    z-index: 20;
+    width: 80%;
+    max-width: 400px;
+    max-height: 80%;
+    overflow-y: auto;
+    display: none;
+    font-family: "宋体", SimSun, serif;
+}
+
+.term-info h3 {
+    font-family: "楷体", KaiTi, serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 季节按钮样式 */
+.season-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.season-button {
+    padding: 10px 20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "楷体", KaiTi, serif;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.season-button:hover {
+    background: #333;
+    color: #fff;
+}
+
+.season-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.activity-list {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    font-family: "宋体", SimSun, serif;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #56557f;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+footer nav a:hover {
+    opacity: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .solar-terms-container {
+        max-width: 800px;
+        height: 800px;
+    }
+    
+    .term {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .solar-terms-container {
+        max-width: 600px;
+        height: 600px;
+    }
+    
+    .term {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .season-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .solar-terms-container {
+        max-width: 400px;
+        height: 400px;
+    }
+    
+    .term {
+        width: 60px;
+        height: 60px;
+    }
+    
+    section {
+        padding: 20px;
+    }
+}
+
+.heading{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.heading img{
+    width: 89%;
+    border-radius: 15px;
+}
+
+.container ul li a:hover{
+    color: #b6b6b6;
+}
+
+p {
+    font-family: "楷体", KaiTi, serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#time-distribution{
+    font-family: "楷体", KaiTi, "Noto Serif SC", serif;
+}

@@ -1,0 +1,268 @@
+/* 基础字体声明 */
+@font-face {
+    font-family: 'Noto Serif SC';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Serif SC'), local('NotoSerifSC-Regular');
+}
+
+@font-face {
+    font-family: 'Noto Serif SC';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Noto Serif SC Bold'), local('NotoSerifSC-Bold');
+}
+
+/* 基础样式设置 */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #50d890;
+    --accent-color: #ffa41b;
+    --text-color: #333;
+    --bg-color: #f0f4f8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 水墨风格背景 */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+    line-height: 1.6;
+    background-color: rgb(255, 237, 197);
+    background-image: url('../img/chinese-border-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 头部导航样式 */
+header {
+    background-color: #56557f;
+    color: var(--color-background);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* 主要内容区域样式 */
+main {
+    padding-top: 100px;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-bottom: 40px;
+    padding: 30px;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    pointer-events: none;
+}
+
+/* 标题样式 */
+h1 {
+    font-family: "楷体", KaiTi, "Noto Serif SC", serif;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+section h2 {
+    color: #333;
+    font-family: "楷体", KaiTi, "Noto Serif SC", serif;
+    font-size: 28px;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #888, transparent);
+}
+
+/* 概览段落样式 */
+#culture-overview p {
+    font-family: "宋体", SimSun, "Noto Serif SC", serif;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* 诗歌展示样式 */
+#poetry-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.poetry-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.poetry-card:hover {
+    transform: translateY(-5px);
+}
+
+.poetry-content {
+    font-family: "楷体", KaiTi, "Noto Serif SC", serif;
+    font-size: 18px;
+    color: #333;
+    margin: 15px 0;
+    line-height: 1.8;
+}
+
+.poetry-author {
+    font-family: "宋体", SimSun, "Noto Serif SC", serif;
+    text-align: right;
+    color: #666;
+    font-size: 14px;
+}
+
+/* 节日列表样式 */
+#festival-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.festival-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.festival-card:hover {
+    transform: translateY(-5px);
+}
+
+.festival-card h3 {
+    font-family: "楷体", KaiTi, "Noto Serif SC", serif;
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.festival-card p {
+    font-family: "宋体", SimSun, "Noto Serif SC", serif;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #56557f;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+footer nav a:hover {
+    opacity: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    main {
+        padding-top: 80px;
+    }
+
+    section {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    #poetry-showcase, #festival-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .poetry-card, .festival-card {
+        padding: 15px;
+    }
+}
+
+.container ul li a:hover{
+    color: #b6b6b6;
+}
+
+h4{
+    font-family: "楷体", KaiTi, serif;
+    font-size: 18px;
+}

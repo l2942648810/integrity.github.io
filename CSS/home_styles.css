@@ -1,0 +1,126 @@
+/* 直接使用系统默认字体 */
+:root {
+    --color-primary: #3A5F0B;
+    --color-secondary: #F2DDA4;
+    --color-accent: #5B8C5A;
+    --color-text: #333;
+    --color-background: #FAFAFA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+p{
+    text-indent: 2em;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #56557f;
+    color: var(--color-background);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: var(--color-background);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--color-secondary);
+}
+
+.hero {
+    height: 93vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    margin-top: -35%;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+h1 {
+    font-family: serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.season-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.season-overlay.active {
+    opacity: 1;
+}
+
+#spring { background-image: url('../img/spring.jpg'); }
+#summer { background-image: url('../img/summer.jpeg'); }
+#autumn { background-image: url('../img/autumn.jpg'); }
+#winter { background-image: url('../img/winter.jpg'); }
+
+footer {
+    background-color: #56557f;
+    color: var(--color-background);
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer nav a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.container ul li a:hover{
+    color: #b6b6b6;
+}
